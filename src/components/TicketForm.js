@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../styles.css";
 
-export default function TicketForm() {
+export default function TicketForm({ dispatch }) {
   const [title, setTitle] = useState("");
   const [descritpion, setDescription] = useState("");
   const [priority, setPriority] = useState("1");
@@ -26,7 +26,7 @@ export default function TicketForm() {
       descritpion,
       priority,
     };
-
+    dispatch({ type: "ADD_TICKET", payload: ticketData });
     clearFrom();
   };
 
