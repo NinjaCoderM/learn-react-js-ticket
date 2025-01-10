@@ -43,6 +43,14 @@ export default function TicketForm() {
           onChange={(e) => setDescription(e.target.value)}
         />
       </div>
+      <fieldset className="priority-fieldset">
+        <legend>Priority</legend>
+        <select onChange={(e) => setPriority(e.target.value)}>
+          {Object.entries(priorityLabel).map(([key, value]) => (
+            <option value={key}>{value}</option>
+          ))}
+        </select>
+      </fieldset>
     </form>
   );
 }
