@@ -20,6 +20,13 @@ export default function TicketForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const ticketData = {
+      id: new Date().toISOString(),
+      title,
+      descritpion,
+      priority,
+    };
+
     clearFrom();
   };
 
@@ -59,6 +66,9 @@ export default function TicketForm() {
           </label>
         ))}
       </fieldset>
+      <button type="submit" className="button">
+        Submit
+      </button>
     </form>
   );
 }
